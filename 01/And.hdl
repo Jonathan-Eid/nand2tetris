@@ -15,4 +15,7 @@ CHIP And {
 
     PARTS:
     // Put your code here:
+        Nand(a=a, b=b, out=aNandb); // Nand the two inputs
+        Not(in=aNandb, out=out); // The negation of the Nand output results in an And
+
 }
