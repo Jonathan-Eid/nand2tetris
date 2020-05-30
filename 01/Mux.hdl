@@ -15,4 +15,9 @@ CHIP Mux {
 
     PARTS:
     // Put your code here:
+    //Broke down the multiplexer by selecting 'a' when 'sel' is 0 and 'b' when 'sel' is 1 then combined them with or
+    Not(in=sel, out=notsel);
+    And(a=a, b=notsel, out=aAndNotsel);
+    And(a=b, b=sel, out=bAndsel);
+    Or(a=aAndNotsel, b=bAndsel, out=out);
 }

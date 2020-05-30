@@ -9,12 +9,15 @@
  *       0 otherwise
  */
 
+
 CHIP Or {
     IN a, b;
     OUT out;
 
     PARTS:
-    // Put your code here:
+    
+    // DeMorgan's Law Not(a or b) == Not(a) and Not(b), so Not(Not(a) and Not(b)) == Not(Not(a or b)) == a or b
+    
         Not(in=a, out=nota);
         Not(in=b, out=notb);
         And(a=nota, b=notb, out=notaAndnotb);
